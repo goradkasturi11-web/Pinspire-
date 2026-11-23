@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <defs>
+    <pattern id="garden" width="220" height="220" patternUnits="userSpaceOnUse">
+      <path d="M110 220V139M110 177c-31-2-45-19-48-42 26 0 42 13 48 42Zm0-17c29-4 42-21 44-44-25 2-40 16-44 44Z" fill="none" stroke="#527b66" stroke-linecap="round" stroke-width="5"/>
+      <g transform="translate(110 95)">
+        <ellipse rx="13" ry="37" fill="#d88473" transform="rotate(0) translate(0 -23)"/>
+        <ellipse rx="13" ry="37" fill="#e8aa84" transform="rotate(60) translate(0 -23)"/>
+        <ellipse rx="13" ry="37" fill="#d88473" transform="rotate(120) translate(0 -23)"/>
+        <ellipse rx="13" ry="37" fill="#e8aa84" transform="rotate(180) translate(0 -23)"/>
+        <ellipse rx="13" ry="37" fill="#d88473" transform="rotate(240) translate(0 -23)"/>
+        <ellipse rx="13" ry="37" fill="#e8aa84" transform="rotate(300) translate(0 -23)"/>
+        <circle r="13" fill="#e7c56e"/>
+      </g>
+      <circle cx="34" cy="45" r="5" fill="#527b66"/>
+      <circle cx="184" cy="184" r="6" fill="#d88473"/>
+    </pattern>
+    <linearGradient id="paper" x2="0" y2="1">
+      <stop stop-color="#f2eee2"/>
+      <stop offset="1" stop-color="#e6ebdf"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#paper)"/>
+  <rect width="900" height="1200" fill="url(#garden)" opacity=".86"/>
+  <path d="M0 990c185-91 340-15 488-86s263-92 412-10v306H0Z" fill="#d9e3d3" opacity=".55"/>
+</svg>

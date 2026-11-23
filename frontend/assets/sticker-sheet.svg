@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <rect width="900" height="1100" rx="36" fill="#f5eee3"/>
+  <rect x="34" y="34" width="832" height="1032" rx="28" fill="#fffaf1" stroke="#e5daca" stroke-width="3"/>
+  <text x="450" y="113" text-anchor="middle" fill="#395b50" font-family="Arial,sans-serif" font-size="36" font-weight="700" letter-spacing="3">LITTLE JOY CLUB</text>
+  <g stroke="#fffaf1" stroke-linejoin="round" stroke-width="11">
+    <path d="M170 300c-66-76-155 6-84 71l84 79 84-79c71-65-18-147-84-71Z" fill="#e88e83"/>
+    <path d="m454 193 28 62 68 8-51 45 14 67-59-35-59 35 14-67-51-45 68-8Z" fill="#e4bd64"/>
+    <path d="M683 245c0-57 96-57 96 0v92c0 57-96 57-96 0Z" fill="#9db99b"/>
+    <circle cx="731" cy="255" r="7" fill="#395b50" stroke="none"/>
+    <circle cx="757" cy="255" r="7" fill="#395b50" stroke="none"/>
+    <path d="M735 276q10 12 20 0" fill="none" stroke="#395b50" stroke-width="5"/>
+    <path d="M215 530c0-45 36-81 81-81h116v135H296c-45 0-81-9-81-54Z" fill="#8ca6c0"/>
+    <text x="355" y="538" text-anchor="middle" fill="#fffaf1" stroke="none" font-family="Arial,sans-serif" font-size="29" font-weight="700">GOOD DAY</text>
+    <path d="M592 450h120l-16 150h-88Z" fill="#e9a95f"/>
+    <path d="M592 481h120m-120 33h120m-120 33h120" stroke="#fff2d5" stroke-width="8"/>
+    <path d="M139 753c39-59 78-59 117 0s78 59 117 0 78-59 117 0" fill="none" stroke="#bd8bae" stroke-width="28" stroke-linecap="round"/>
+    <circle cx="671" cy="791" r="76" fill="#edc0ae"/>
+    <path d="m670 731 14 42 44 2-34 27 12 42-36-24-36 24 12-42-34-27 44-2Z" fill="#fff7e8" stroke="none"/>
+    <path d="M250 923c0-37 30-67 67-67h272c37 0 67 30 67 67v8H250Z" fill="#719079"/>
+    <text x="453" y="911" text-anchor="middle" fill="#fffaf1" stroke="none" font-family="Arial,sans-serif" font-size="24" font-weight="700">TAKE A BREATH</text>
+  </g>
+  <text x="450" y="1014" text-anchor="middle" fill="#9a8d7e" font-family="Georgia,serif" font-size="21" font-style="italic">journal • laptop • happy mail</text>
+</svg>

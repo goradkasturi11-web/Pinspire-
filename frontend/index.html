@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>Pinspire — find your next idea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Pinspire home">
+        <span class="brand-mark">p</span><span>pinspire</span>
+      </a>
+      <button class="profile-switch" id="profile-switch">
+        <span class="avatar avatar-self" id="profile-avatar">A</span>
+        <span class="profile-copy"><strong id="profile-name">Guest explorer</strong><small id="profile-label">Your creative space</small></span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="side-label">DISCOVER</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span> Home</button>
+        <button class="nav-item" data-view="explore"><span class="nav-icon">◈</span> Explore</button>
+        <button class="nav-item" data-view="following"><span class="nav-icon">◎</span> Following</button>
+        <button class="nav-item" data-view="trending"><span class="nav-icon">↗</span> Trending</button>
+      </nav>
+      <div class="side-divider"></div>
+      <div class="side-heading"><span class="side-label">YOUR BOARDS</span><button class="icon-button add-board" id="add-board" aria-label="Create board">＋</button></div>
+      <nav class="board-nav" id="board-nav" aria-label="Your boards"></nav>
+      <button class="dsa-entry" id="dsa-toggle"><span class="dsa-glyph">⌘</span><span><strong>DSA playground</strong><small>See structures at work</small></span><span class="chevron">⌄</span></button>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="spark">✳</span><span><strong>Ideas are better shared.</strong><small>Save what inspires you.</small></span></div>
+        <button class="help-link" id="about-button">About this demo <span>↗</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="search-input" type="search" placeholder="Search for ideas, places, and more" autocomplete="off" aria-label="Search pins">
+          <kbd>⌘ K</kbd>
+          <div class="suggestions" id="suggestions" role="listbox" hidden></div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button notification-button" aria-label="Notifications" title="Notifications">♧<i></i></button>
+          <button class="upload-button" id="upload-button"><span>＋</span> Create pin</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="live-dot"></span><span id="eyebrow-text">YOUR DAILY DOSE OF INSPIRATION</span></div>
+            <h1 id="page-title">Find your next <em>big idea.</em></h1>
+            <p class="page-subtitle" id="page-subtitle">A little inspiration goes a long way. See what catches your eye.</p>
+          </div>
+          <button class="date-pill" id="date-pill"><span>✦</span> A fresh start, every day</button>
+        </div>
+
+        <div class="topic-row" id="topic-row" aria-label="Explore categories"></div>
+        <div class="feed-toolbar">
+          <div class="feed-heading"><h2 id="feed-title">Picked for you</h2><span class="result-count" id="result-count"></span></div>
+          <div class="feed-tools">
+            <button class="sort-button" id="sort-button">✧ <span>For you</span><span class="chevron">⌄</span></button>
+            <button class="layout-button" title="Masonry layout" aria-label="Masonry layout">▥</button>
+          </div>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>⌕</span><h3>No ideas found just yet</h3><p>Try a different search or explore another category.</p>
+          <button class="text-button" id="clear-filters">Clear filters</button>
+        </div>
+        <section class="pin-grid" id="pin-grid" aria-label="Pins"></section>
+        <div class="feed-footer"><span class="footer-line"></span><span>That’s a lovely start. Keep exploring.</span><span class="footer-line"></span></div>
+      </section>
+    </main>
+  </div>
+
+  <aside class="dsa-panel" id="dsa-panel" aria-label="Data structure playground" hidden>
+    <div class="dsa-panel-head"><div><div class="eyebrow">UNDER THE HOOD</div><h2>The DSA playground</h2></div><button class="icon-button" id="close-dsa" aria-label="Close data structure panel">×</button></div>
+    <p class="dsa-intro">Every interaction has a structure behind it. Try a feature and watch the counters change.</p>
+    <div class="structure-card">
+      <div class="structure-title"><span class="structure-icon heap-icon">♟</span><div><strong>Max Heap</strong><small>Live home feed ranking</small></div><span class="complexity">O(log n)</span></div>
+      <p>Feed candidates are prioritized by freshness, relevance, and popularity. The highest-scoring pin rises to the top.</p>
+      <div class="structure-metric"><span>Pins in priority queue</span><b id="heap-count">0</b></div>
+      <div class="heap-bars" id="heap-bars"></div>
+    </div>
+    <div class="structure-card">
+      <div class="structure-title"><span class="structure-icon trie-icon">⌕</span><div><strong>Prefix Trie</strong><small>Search suggestions</small></div><span class="complexity">O(k)</span></div>
+      <p>Type in search. A trie walks only the typed prefix to suggest matching topics, pin titles, and creators.</p>
+      <div class="structure-metric"><span>Search vocabulary</span><b id="trie-count">0</b></div>
+      <div class="trie-visual"><span>root</span><i>⌁</i><span>p</span><i>⌁</i><span>i</span><i>⌁</i><span>n</span><small>prefix path</small></div>
+    </div>
+    <div class="structure-card">
+      <div class="structure-title"><span class="structure-icon list-icon">↝</span><div><strong>Linked Lists</strong><small>Your pins &amp; saves</small></div><span class="complexity">O(1) append</span></div>
+      <p>Your uploaded pins and each board’s saved pins are stored as linked lists. Save or remove a pin to update a list.</p>
+      <div class="structure-metric"><span>My pins</span><b id="my-pins-count">0</b></div>
+      <div class="structure-metric"><span>Saved pins</span><b id="saved-count">0</b></div>
+      <div class="list-visual"><span>head</span><b>→</b><i>pin</i><b>→</b><i>pin</i><b>→</b><small>null</small></div>
+    </div>
+    <div class="structure-card">
+      <div class="structure-title"><span class="structure-icon graph-icon">⌘</span><div><strong>Follow Graph</strong><small>People &amp; recommendations</small></div><span class="complexity">BFS</span></div>
+      <p>Following creates edges in a user graph. Breadth-first traversal helps surface creators connected to your interests.</p>
+      <div class="structure-metric"><span>People you follow</span><b id="following-count">0</b></div>
+      <div class="graph-visual"><span class="graph-node me">you</span><i></i><span class="graph-node">a</span><i></i><span class="graph-node">b</span><small>your network</small></div>
+    </div>
+    <div class="dsa-footnote"><span>✦</span> Real interactions, real data structures. No pretend testimonials.</div>
+  </aside>
+  <div class="panel-backdrop" id="panel-backdrop" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></section>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
